@@ -24,7 +24,7 @@
             <small>{"1month ago"}</small>
           </div>
           {/* reply Area */}
-          <div className="REPLYAREA">
+          {/* <div className="REPLYAREA">
             <img src={DELETEIMG} 
              onClick={()=>{
 
@@ -59,7 +59,7 @@
              Reply
             </b>
             </div>
-          </div>
+          </div> */}
          
         </div>
          </div>
@@ -90,7 +90,7 @@
        <div className="user2inp">
 
       
-            <div>{sre}</div>
+            {/* <div>{sre}</div> */}
 
             <img src={USERIMG} className="ur"></img>
            <input type="text" className="jvl2"  onChange={handlechange} ></input> 

@@ -4,7 +4,7 @@ import USERIMG from "./IMAGES/image-amyrobson.png"
 
 function Local({fetchLocalItems}) {
 
-  const [userCommand, setUserCommand] = useState({content:"",replies:[{firstreplies:"", secondreplies: []}]});
+  const [userCommand, setUserCommand] = useState({content:"",replies:[]});
 
   let Local_Ar = JSON.parse(localStorage.getItem("command")) || [];
 
@@ -13,7 +13,7 @@ function Local({fetchLocalItems}) {
   const handlechange = (event) => {
     const { name, value } = event.target;
    
-    setUserCommand({content:value,replies:[{firstreplies:"",secondreplies:[]}]});
+    setUserCommand({content:value,replies:[]});
     
   };
 

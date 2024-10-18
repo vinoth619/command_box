@@ -12,7 +12,7 @@ function DATA(props) {
     JSON.parse(localStorage.getItem("command")) || []
   );
 
-  const [replies, setReplies] = useState({firstreplies :"", secondreplies: [] });
+  const [replies, setReplies] = useState({firstreplies :"" });
   const [ind, setin] = useState();
 
   const [second, setSecond] = useState("");
@@ -62,7 +62,7 @@ function DATA(props) {
   // handling replies
   const handleReply = (event) => {
     const { name, value } = event.target;
-    setReplies({ firstreplies: value, secondreplies: [] });
+    setReplies({ firstreplies: value });
   };
 
  
@@ -82,36 +82,7 @@ function DATA(props) {
     jvl[i].value = "@amyrobson";
   };
 
-  const secondReply = (i, value) => {
-  
-
-    const inp = document.getElementsByClassName("jvl2");
-    let Dummy = localArray;
-  
-    if (!Dummy[i].replies[i].secondreplies) {
-      Dummy[i].replies[i].secondreplies = [];
-    }
-  
-    // Push the second reply
-    Dummy[i].replies[i].secondreplies.push({ second: value });
-    localStorage.setItem("command", JSON.stringify(Dummy));
-    setLocalArray(JSON.parse(localStorage.getItem("command") || []));
-    // inp[i].value = "@juliusomo";
-
-
-
-  };
-
-
-  
-  
-  
-  
-
-    
-  
-
-  let row = localArray.map((e, i) => {
+let row = localArray.map((e, i) => {
   
   
    
@@ -125,29 +96,19 @@ function DATA(props) {
 
       
 
-     let sre = localArray[i]?.replies[i]?.secondreplies?.map((e, i) => {
-      return (
-        <div className="secondmap" key={i}>
-          <div>{Head(i)}</div>
-          <p>{e.second}</p>
-        </div>
-      );
-    });
+   
 
 
       return (
 
-        <div>
-        {i!=0?(
+        
           <div className="seconduser">
         <div>{User2(i)}</div>
      
       <p>{e.firstreplies}</p>
-     <div>{User2Input(i, secondReply,sre)}</div>
      </div>
         
-          ):null}
-          </div>
+        
       );
     }
   
